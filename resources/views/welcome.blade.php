@@ -72,7 +72,7 @@
 
                 <div class="links">
                     <a href="{{ url('/sales') }}">Sales</a>
-                    <a href="{{ url('/allsales') }}">All Sales</a>
+                    <a href="{{ route('sale.show') }}">All Sales</a>
                     <a href="{{ url('/products') }}"> Add Product</a>
                     <a href="{{ url('/allproducts') }}"> All Products</a>
                     <a href="{{ url('/customers') }}">Add Customer</a>
