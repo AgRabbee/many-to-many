@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/allsales','BaseController@allsales');
+Route::get('/allsales','BaseController@allsales')->name('sale.show');
 Route::get('/sales','BaseController@index');
 Route::post('/sales','BaseController@sales');
 Route::get('/allproducts','BaseController@viewAllProducts');
