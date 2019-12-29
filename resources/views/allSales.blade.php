@@ -103,16 +103,18 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Product name</th>
-                                <th>Product price</th>
+                                <th>Product Name</th>
+                                <th>Product Price</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data->products  as $value)
+                            @foreach ($customer as $value)
                             <tr>
-                                <td>{{ $data->first_name . ' ' . $data->last_name }}</td>
-                                <td>{{ $value->product_name }}</td>
-                                <td>{{ $value->product_price }}</td>
+                                <td>{{ $value->first_name . ' ' . $value->last_name }}</td>
+                                @foreach ($value->products as $productValue)
+                                    <td>{{ $productValue->product_name }}</td>
+                                    <td>{{ $productValue->product_price }}</td>
+                                @endforeach
                             </tr>
                             @endforeach
                         </tbody>
