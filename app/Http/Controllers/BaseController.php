@@ -2,18 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer_Product;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Customer;
 class BaseController extends Controller
 {
-    public function allsales()
-    {
-        // $data = Customer::find(1);
-        $data = Customer::findOrFail(1);
-        // dd($data);
-        return view('allsales')->with('data',$data);
-    }
+
     public function index()
     {
         $data = array(
@@ -22,6 +17,17 @@ class BaseController extends Controller
         );
         return view('sales')->with($data);
     }
+
+    public function allsales()
+    {
+         $customer = Customer::orderBy('id', 'asc')->get();
+        return view('allsales', compact('customer'));
+    }
+
+
+
+
+
 
     public function sales(Request $request)
     {
